@@ -12,7 +12,7 @@ class App extends Component {
 
     this.state = {
       movies: [],
-      nominated: ["blah"],
+      nominated: [],
       searchField: 'goonies',
       prevSearchState: '',
       loading: true
@@ -75,13 +75,6 @@ class App extends Component {
          {/* <img className="logo" alt="logo" src="https://unothegateway.com/wp-content/uploads/2016/03/movie-reel.png"/> */}
        </div>
 
-       <div className="nominated">
-         {this.state.nominated.map((nom, index) => (
-            <div key={index}><h1>{nom.Title}</h1> Hello</div>
-            
-        ))}
-        
-       </div>
         <button onClick={ this.nominate }>Nominate</button>
         <SearchBox
           placeholder={ 'search..' }
@@ -92,6 +85,18 @@ class App extends Component {
             :
         <MovieList movies={movies}/>
        )}
+       
+       <div className="nominated">
+         <h1>Your Nominations</h1>
+         {this.state.nominated.map((nom, index) => (
+            <div className="nom-item-container" key={index}>
+              <img className="nom-avatar" alt="poster" src={nom.Poster}/>
+              <h4>{nom.Title}</h4>
+
+            </div>
+            
+        ))}
+       </div>
       </div>
     );
   }

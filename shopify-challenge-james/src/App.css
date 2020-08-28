@@ -29,16 +29,34 @@
 }
 
 .nominated {
-  position: fixed;
-  top: 40%;
-  left: 80%;
-  width: 30%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
   background-color: rgb(255, 217, 0);
   color: white;
+  flex-wrap: wrap;
 }
 .nominated h1{
   display: flex;
   color: white;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.nom-item-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nom-avatar {
+  display:flex;
+  justify-items: center;
+  width: 20%;
 }
 
 @keyframes App-logo-spin {
