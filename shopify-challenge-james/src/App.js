@@ -11,8 +11,8 @@ class App extends Component {
     super(); 
 
     this.state = {
-      movies: null,
-      nominated: [],
+      movies: [],
+      nominated: ["blah"],
       searchField: 'goonies',
       prevSearchState: '',
       loading: true
@@ -31,7 +31,7 @@ class App extends Component {
     this.setState({...this.state, movies: [movies.data], prevSearchState: this.state.searchField, loading:false})
     }
     if(this.state.searchField === ''){
-      this.setState({...this.state, searchField: 'hulk'})
+      this.setState({...this.state, searchField: 'goonies'})
     }
   }
 
@@ -40,18 +40,21 @@ class App extends Component {
     this.setState({ searchField: e.target.value });
   }
 
-  nominate = (e) => {
+  nominate = () => {
     const nominated = this.state.nominated.slice(0);
     const movieNoms = this.state.movies;
 
-    nominated.push({
-      movieNoms
-    })
+    //Is push causing the mapping issue? Does .push return the length of the array and not the array itself?
+    // nominated.push({
+    //   movieNoms
+    // })
+
+    const combined = nominated.concat(movieNoms)
 
     this.setState({
-      nominated: nominated,
+      nominated: combined,
     })
-    console.log("Nominated function", nominated)
+    console.log("Nominated function 2", nominated)
   }
 
 
@@ -63,8 +66,8 @@ class App extends Component {
     //     movie.body.toLowerCase().includes(searchField.toLowerCase())
     //   )
 
-      console.log("Movies", movies)
-      console.log("App js state", this.state.movies)
+      // console.log("Movies", movies)
+      // console.log("App js state", this.state.movies)
       console.log("Nominated state", this.state.nominated)
     return (
       <div className='App'>
@@ -73,11 +76,13 @@ class App extends Component {
        </div>
 
        <div className="nominated">
-         {this.state.nominated.map(nom => (
-            <div key={nom.Released} nom={nom.Title}><h1>{nom.Year}</h1> Hello</div>
+         {this.state.nominated.map((nom, index) => (
+            <div key={index}><h1>{nom.Title}</h1> Hello</div>
+            
         ))}
+        
        </div>
-        <button onClick={this.nominate}>Nominate</button>
+        <button onClick={ this.nominate }>Nominate</button>
         <SearchBox
           placeholder={ 'search..' }
           handleChange={ this.handleChange }
