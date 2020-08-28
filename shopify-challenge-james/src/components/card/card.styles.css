@@ -4,7 +4,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    background-color: #00114746;
+    background-color: #00000046;
     border: 1px solid grey;
     border-radius: 5px;
     padding: 25px;
@@ -14,7 +14,7 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
-    align-items: flex-end;
+    justify-content: center;
   }
 
   @media only screen and (max-width: 600px) {
@@ -30,11 +30,13 @@
   .avatar {
     min-width: 10%;
     display: flex;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     border: 3px solid rgb(30, 221, 255);
+    justify-items: center;
   }
 
-  .card-username {
+  .card-name {
+    color: white;
     display: flex;
     font-size: small;
     padding: 10px
@@ -46,7 +48,6 @@
     flex-wrap: wrap;
     width:100%;
     word-break: break-all;
-    height: 100%;
   }
   
   .card-header {
