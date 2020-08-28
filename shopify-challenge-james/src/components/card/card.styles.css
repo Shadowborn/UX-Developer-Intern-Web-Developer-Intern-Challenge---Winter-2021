@@ -1,0 +1,57 @@
+.card-container {
+    display: flex;
+    width: 30%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #00114746;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 10px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    align-items: flex-end;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .card-container {
+      width:100%;
+    }
+  }
+  
+  .card-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .avatar {
+    min-width: 10%;
+    display: flex;
+    border-radius: 50%;
+    border: 3px solid rgb(30, 221, 255);
+  }
+
+  .card-username {
+    display: flex;
+    font-size: small;
+    padding: 10px
+  }
+
+  p {
+    color: white;
+    padding: 10px;
+    flex-wrap: wrap;
+    width:100%;
+    word-break: break-all;
+    height: 100%;
+  }
+  
+  .card-header {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
