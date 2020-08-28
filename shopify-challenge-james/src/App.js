@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       movies: null,
       nominated: [],
-      searchField: 'hulk',
+      searchField: 'goonies',
       prevSearchState: '',
       loading: true
     }
@@ -40,18 +40,18 @@ class App extends Component {
     this.setState({ searchField: e.target.value });
   }
 
-  nominate = () => {
+  nominate = (e) => {
     const nominated = this.state.nominated.slice(0);
-    const movies = this.state.movies;
+    const movieNoms = this.state.movies;
 
     nominated.push({
-      movies
+      movieNoms
     })
 
     this.setState({
       nominated: nominated,
     })
-    console.log(nominated)
+    console.log("Nominated function", nominated)
   }
 
 
@@ -72,9 +72,11 @@ class App extends Component {
          {/* <img className="logo" alt="logo" src="https://unothegateway.com/wp-content/uploads/2016/03/movie-reel.png"/> */}
        </div>
 
-       <div className="nominated">{this.state.nominated.map(nom => (
-            <div key={nom.Title} nom={nom}><h1>{nom.Title}</h1> Hello</div>
-        ))}</div>
+       <div className="nominated">
+         {this.state.nominated.map(nom => (
+            <div key={nom.Released} nom={nom.Title}><h1>{nom.Year}</h1> Hello</div>
+        ))}
+       </div>
         <button onClick={this.nominate}>Nominate</button>
         <SearchBox
           placeholder={ 'search..' }

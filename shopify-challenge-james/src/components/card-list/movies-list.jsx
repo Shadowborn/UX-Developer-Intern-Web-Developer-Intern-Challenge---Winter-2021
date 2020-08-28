@@ -7,7 +7,7 @@ import './card-list.styles.css';
 export const MovieList = (props) => (
     <div className="card-list"> 
         {props.movies.map(movie => (
-            <Movie key={movie.Title} movie={movie}/>
+            <Movie key={movie.Released} movie={movie}/>
         ))}
     </div>
 );
