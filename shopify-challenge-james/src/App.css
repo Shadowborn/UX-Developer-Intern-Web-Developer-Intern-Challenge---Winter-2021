@@ -23,6 +23,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.movie-button {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  outline: none;
+  width:30%;
+}
 
 .App-link {
   color: #61dafb;
@@ -51,12 +57,22 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 20%;
 }
 
 .nom-avatar {
   display:flex;
   justify-items: center;
   width: 20%;
+}
+
+.banner-complete {
+  display: flex;
+  background-color: yellow;
+  position: absolute;
+  font-size: 3rem;
+  top: 50%;
+  left: 30%;
 }
 
 @keyframes App-logo-spin {

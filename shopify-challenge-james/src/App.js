@@ -15,7 +15,8 @@ class App extends Component {
       nominated: [],
       searchField: 'goonies',
       prevSearchState: '',
-      loading: true
+      loading: true,
+      nomMax: false,
     }
   }
 
@@ -57,15 +58,21 @@ class App extends Component {
     console.log("Nominated function 2", nominated)
   }
 
+  nomBanner = () => {
+    let array = this.state.nominated;
+    var count = array.length + 1
+    if (count === 5){
+      this.setState({
+        nomMax: true
+      })
+      console.log("Max met")
+      console.log(this.state.nomMax)
+    }
+  }
+
 
   render() {
-    const { movies, loading, searchField } = this.state; 
-
-      
-    // const filteredMovies = movies.filter(movie => 
-    //     movie.body.toLowerCase().includes(searchField.toLowerCase())
-    //   )
-
+    const { movies, loading, nomMax, searchField } = this.state; 
       // console.log("Movies", movies)
       // console.log("App js state", this.state.movies)
       console.log("Nominated state", this.state.nominated)
@@ -75,7 +82,7 @@ class App extends Component {
          {/* <img className="logo" alt="logo" src="https://unothegateway.com/wp-content/uploads/2016/03/movie-reel.png"/> */}
        </div>
 
-        <button onClick={ this.nominate }>Nominate</button>
+        {/* <button onClick={ this.nominate }>Nominate</button> */}
         <SearchBox
           placeholder={ 'search..' }
           handleChange={ this.handleChange }
@@ -83,20 +90,28 @@ class App extends Component {
        {((loading === true) ?
             <LoadingSpinner />
             :
-        <MovieList movies={movies}/>
-       )}
-       
-       <div className="nominated">
+        <div>
+        <button className="movie-button" onClick={() => {
+           this.nominate();
+           this.nomBanner() }}>
+        <MovieList movies={movies} />
+        </button>
+        <div className="nominated">
          <h1>Your Nominations</h1>
          {this.state.nominated.map((nom, index) => (
             <div className="nom-item-container" key={index}>
               <img className="nom-avatar" alt="poster" src={nom.Poster}/>
               <h4>{nom.Title}</h4>
-
             </div>
-            
         ))}
        </div>
+        </div>
+       )}
+       {((nomMax === true) ?
+            <div className="banner-complete">Nominations Complete!</div>
+            :
+            <div></div>
+       )}
       </div>
     );
   }
