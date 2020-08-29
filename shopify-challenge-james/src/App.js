@@ -50,10 +50,11 @@ class App extends Component {
     //   movieNoms
     // })
 
-    const combined = nominated.concat(movieNoms)
+    const combined = new Set(nominated.concat(movieNoms))
+    const backToArray = [...combined]
 
     this.setState({
-      nominated: combined,
+      nominated: backToArray,
     })
     console.log("Nominated function 2", nominated)
   }
