@@ -76,24 +76,7 @@ class App extends Component {
     console.log("Nominated state", this.state.nominated)
     return (
       <div className='App'>
-        <div className="header-container">
-          {/* <img className="logo" alt="logo" src="https://unothegateway.com/wp-content/uploads/2016/03/movie-reel.png"/> */}
-        </div>
-        <SearchBox
-          placeholder={'search..'}
-          handleChange={this.handleChange}
-        />
-        {((loading === true) ?
-          <LoadingSpinner />
-          :
-          <div>
-            <button className="movie-button" onClick={() => {
-              this.nominate();
-              this.nomBanner()
-            }}>
-              <MovieList movies={movies} />
-            </button>
-            <div className="nominated">
+        <div className="nominated">
               <h1>Your Nominations</h1>
               {this.state.nominated.map((nom, index) => (
                 <div className="nom-item-container" key={index}>
@@ -102,13 +85,33 @@ class App extends Component {
                 </div>
               ))}
             </div>
-          </div>
-        )}
-        {((nomMax === true) ?
+        {/* <div className="header-container">
+          <img className="logo" alt="logo" src="https://unothegateway.com/wp-content/uploads/2016/03/movie-reel.png"/>
+        </div> */}
+        <SearchBox
+          placeholder={'search..'}
+          handleChange={this.handleChange}
+        />
+        {((loading === true) ?
+          <LoadingSpinner />
+          :
+          
+          <div>
+            {((nomMax === true) ?
           <div className="banner-complete">Nominations Complete!</div>
           :
           <div></div>
         )}
+            <button className="movie-button" onClick={() => {
+              this.nominate();
+              this.nomBanner()
+            }}>
+              <MovieList movies={movies} />
+            </button>
+            
+          </div>
+        )}
+        
       </div>
     );
   }
