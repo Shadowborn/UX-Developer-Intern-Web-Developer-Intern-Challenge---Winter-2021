@@ -18,7 +18,7 @@ yarn start
 
 ## Example 
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![Alt Text](https://i.imgur.com/lLp8DDe.gif)
 
 ```
 
