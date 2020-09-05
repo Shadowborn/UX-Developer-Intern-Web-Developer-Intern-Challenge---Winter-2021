@@ -17,7 +17,7 @@ yarn start
 ```
 
 ## Example Mobile
-![Alt Text](https://i.imgur.com/T98Y21O.gif)
+![Alt Text](https://i.imgur.com/NqTbXeB.gif)
 
 ## Example Desktop
 ![Alt Text](https://i.imgur.com/lLp8DDe.gif)
