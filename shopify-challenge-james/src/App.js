@@ -67,6 +67,13 @@ class App extends Component {
     }
   }
 
+  clearNoms = () => {
+    this.setState({
+      nominated: [],
+      nomMax: false
+    })
+  }
+
 
 
   render() {
@@ -78,6 +85,9 @@ class App extends Component {
       <div className='App'>
         <div className="nominated">
               <h1>Your Nominations</h1>
+              <div className="clearNomDiv">
+              <button className="clearNomButton" onClick={() => {this.clearNoms()}}>Clear Nominations</button>
+              </div>
               {this.state.nominated.map((nom, index) => (
                 <div className="nom-item-container" key={index}>
                   <img className="nom-avatar" alt="poster" src={nom.Poster} />
@@ -88,6 +98,7 @@ class App extends Component {
         {/* <div className="header-container">
           <img className="logo" alt="logo" src="https://unothegateway.com/wp-content/uploads/2016/03/movie-reel.png"/>
         </div> */}
+        
         <SearchBox
           placeholder={'search..'}
           handleChange={this.handleChange}

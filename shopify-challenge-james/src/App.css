@@ -44,7 +44,7 @@
 @media only screen and (max-width: 600px) {
   .movie-button  {
     width: 100%;
-    max-width: 80%;
+    max-width: 95%;
   }
 }
 
@@ -60,6 +60,7 @@
   color: black;
   flex-wrap: wrap;
   margin-top: 30px;
+  text-transform: uppercase;
 }
 .nominated h1{
   display: flex;
@@ -121,4 +122,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.clearNomDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clearNomButton {
+  padding: 10px;
+  margin-bottom: 25px;
+  background-color: black;
+  border: none;
+  color: rgb(255, 255, 140);
 }
