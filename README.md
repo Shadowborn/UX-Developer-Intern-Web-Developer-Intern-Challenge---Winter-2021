@@ -16,7 +16,7 @@ yarn
 yarn start
 ```
 
-## Example Desktop
+## Example
 ![Alt Text](https://i.imgur.com/lLp8DDe.gif)
 
 ```
