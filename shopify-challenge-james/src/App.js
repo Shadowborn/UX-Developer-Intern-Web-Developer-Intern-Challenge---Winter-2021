@@ -47,7 +47,7 @@ class App extends Component {
     const combined = new Set(nominated.concat(movieNoms))
     const backToArray = [...combined]
 
-    if(backToArray.length != 6){
+    if(backToArray.length !== 6){
     this.setState({
       nominated: backToArray,
     })
@@ -77,7 +77,7 @@ class App extends Component {
 
 
   render() {
-    const { movies, loading, nomMax, searchField } = this.state;
+    const { movies, loading, nomMax } = this.state;
     // console.log("Movies", movies)
     // console.log("App js state", this.state.movies)
     console.log("Nominated state", this.state.nominated)
