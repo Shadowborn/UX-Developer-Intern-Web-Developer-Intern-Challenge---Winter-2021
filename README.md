@@ -2,6 +2,10 @@
 
 James Starks' submission for shopify's challenge 
 
+## Live Demo
+
+https://shopify-challenge-james.netlify.app/
+
 ## Installation
 
 Use the package manager [yarn] to install dependencies.
