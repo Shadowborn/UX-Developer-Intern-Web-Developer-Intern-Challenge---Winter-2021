@@ -27,7 +27,7 @@ class App extends Component {
     let prevSearch = this.state.prevSearchState
     if (prevSearch !== searchState) {
       // this.setState({loading:true})
-      const movies = await axios.get(`http://www.omdbapi.com/?t=${searchState}&apikey=b261581a`)
+      const movies = await axios.get(`https://www.omdbapi.com/?t=${searchState}&apikey=b261581a`)
 
       this.setState({ ...this.state, movies: [movies.data], prevSearchState: this.state.searchField, loading: false })
     }
