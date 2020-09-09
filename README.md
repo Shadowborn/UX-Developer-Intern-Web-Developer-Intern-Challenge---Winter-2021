@@ -16,9 +16,8 @@ yarn
 yarn start
 ```
 
-## Example 
-
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+## Example
+![Alt Text](https://i.imgur.com/lLp8DDe.gif)
 
 ```
 
