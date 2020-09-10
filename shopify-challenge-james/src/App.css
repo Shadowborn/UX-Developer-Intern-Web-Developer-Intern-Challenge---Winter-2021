@@ -139,3 +139,11 @@
   border: none;
   color: rgb(255, 255, 140);
 }
+
+.clear-this-nom {
+  padding: 10px;
+  background-color: black;
+  color: rgb(255, 255, 140);
+  margin-bottom: 25px;
+  border: none;
+}

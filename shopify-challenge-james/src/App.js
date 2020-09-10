@@ -104,7 +104,7 @@ class App extends Component {
                 <div className="nom-item-container" key={index}>
                   <img className="nom-avatar" alt="poster" src={nom.Poster} />
                   <h4>{nom.Title}</h4>
-                  <button onClick={() => this.clearThisNom(nom.Poster)}>x</button>
+                  <button className="clear-this-nom" onClick={() => this.clearThisNom(nom.Poster)}>x</button>
                 </div>
               ))}
             </div>
