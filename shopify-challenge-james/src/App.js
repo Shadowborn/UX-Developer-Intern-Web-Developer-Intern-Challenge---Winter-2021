@@ -81,7 +81,8 @@ class App extends Component {
     const newList = array.filter((item) => item.Poster !== Poster);
     console.log("New List", newList)
     this.setState({
-      nominated: newList
+      nominated: newList,
+      nomMax: false
     })
   }
 
