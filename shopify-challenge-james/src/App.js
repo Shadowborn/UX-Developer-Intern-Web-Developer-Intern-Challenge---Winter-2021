@@ -52,7 +52,6 @@ class App extends Component {
       nominated: backToArray,
     })
   }
-    console.log("Nominated function 2", nominated)
   }
 
   nomBanner = () => {
@@ -62,8 +61,6 @@ class App extends Component {
       this.setState({
         nomMax: true
       })
-      console.log("Max met")
-      console.log(this.state.nomMax)
     }
   }
 
@@ -74,12 +71,8 @@ class App extends Component {
     })
   }
   clearThisNom = (Poster) => {
-    console.log("Clear this nom")
-    console.log("ClearThisNom Nominated State", this.state.nominated)
     let array = this.state.nominated;
-    console.log(array)
     const newList = array.filter((item) => item.Poster !== Poster);
-    console.log("New List", newList)
     this.setState({
       nominated: newList,
       nomMax: false
@@ -90,9 +83,6 @@ class App extends Component {
 
   render() {
     const { movies, loading, nomMax } = this.state;
-    // console.log("Movies", movies)
-    // console.log("App js state", this.state.movies)
-    console.log("Nominated state", this.state.nominated)
     return (
       <div className='App'>
         <div className="nominated">
@@ -108,9 +98,6 @@ class App extends Component {
                 </div>
               ))}
             </div>
-        {/* <div className="header-container">
-          <img className="logo" alt="logo" src="https://unothegateway.com/wp-content/uploads/2016/03/movie-reel.png"/>
-        </div> */}
         
         <SearchBox
           placeholder={'search..'}

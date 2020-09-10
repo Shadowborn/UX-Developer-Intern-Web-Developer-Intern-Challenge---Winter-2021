@@ -10,6 +10,5 @@ export const Movie = (props) => (
         <h1 className="card-name">{ props.movie.Released }</h1>
     </div>
         <p>{ props.movie.Plot }</p>
-        {console.log("Props", props)}
     </div>
 );
