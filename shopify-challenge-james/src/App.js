@@ -73,6 +73,17 @@ class App extends Component {
       nomMax: false
     })
   }
+  clearThisNom = (Poster) => {
+    console.log("Clear this nom")
+    console.log("ClearThisNom Nominated State", this.state.nominated)
+    let array = this.state.nominated;
+    console.log(array)
+    const newList = array.filter((item) => item.Poster !== Poster);
+    console.log("New List", newList)
+    this.setState({
+      nominated: newList
+    })
+  }
 
 
 
@@ -92,6 +103,7 @@ class App extends Component {
                 <div className="nom-item-container" key={index}>
                   <img className="nom-avatar" alt="poster" src={nom.Poster} />
                   <h4>{nom.Title}</h4>
+                  <button onClick={() => this.clearThisNom(nom.Poster)}>x</button>
                 </div>
               ))}
             </div>
